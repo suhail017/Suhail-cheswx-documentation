@@ -40,7 +40,6 @@ git clone https://github.com/suhail017/cheswx.git
 
 which indicates the download has been sucessfully completed. 
 
-## Downloading the Zip file
 
 
 
