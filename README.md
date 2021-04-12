@@ -5,7 +5,7 @@
 
 # Description
 
-ChesWx (Chesapeake Bay Weather) grid contains hourly data for precipitation and temperature observations for the Chesapeake Bay watershed and the broader Mid-Atlantic regions.  `cwxr` is the R library package written completely with R language for this ChesWx datasets . It was developed for the [MARISA](https://www.marisa.psu.edu/about/)  ( Mid-Atlantic Regional Integrated Sciences and Assessments)  project . It  can be downloaded from the following directory:
+ChesWx (Chesapeake Bay Weather) grid contains hourly data for precipitation and temperature observations for the Chesapeake Bay watershed and the broader Mid-Atlantic regions.  `cwxr` is the R library package written completely with R language for this ChesWx datasets. It was developed for the Mid-Atlantic Regional Integrated Sciences and Assessments[MARISA](https://www.marisa.psu.edu/about/) project. It  can be downloaded from the following directory:
 <https://github.com/orgs/scrim-network>
 ## Features
 
