@@ -16,12 +16,14 @@ ChesWx (Chesapeake Bay Weather) grid contains hourly data for precipitation and 
 ### To download the code in your local machine or repo, you can do the followings:
 ## Cloning the Repository
 1. On GitHub, navigate to the main page of the repository.
-3. Above the list of files, click  Code.
-4. To clone the repository using HTTPS, under "Clone with HTTPS", click . To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click . To clone a repository using GitHub CLI, click Use GitHub CLI, then click .
+2. Above the list of files, click  Code.
+3. To clone the repository using HTTPS, under "Clone with HTTPS", click . To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click . To clone a repository using GitHub CLI, click Use GitHub CLI, then click .
 
 ![image1](https://drive.google.com/uc?export=view&id=1aPFKDsLSbc5wn3XriP1TpHIEvNPzBDlV))
 
 4. Open Terminal.
+
+
 ![image2](https://drive.google.com/uc?export=view&id=1i4aPj5_BfrIs5-TKEDUJFv_vP0owJ5fG)
 
 
@@ -30,7 +32,10 @@ ChesWx (Chesapeake Bay Weather) grid contains hourly data for precipitation and 
 ```sh
 git clone https://github.com/suhail017/cheswx.git
 ```
+
 7. Following window will appear after entering the user name and Password
+
+
 ![image3](https://drive.google.com/uc?export=view&id=1JkUKdPXQx9zcaqhYzstWU7XtwtIa6sc7)
 
 which indicates the download has been sucessfully completed. 
