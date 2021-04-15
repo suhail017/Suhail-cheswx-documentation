@@ -138,3 +138,5 @@ R CMD INSTALL --library=/path/to/Rlibs brocolors_0.1.tar.gz
 where brocolors is the package name.
 
 If you install the package using  `devtools::install()`, you just need the  `~/.Renviron`  file; you don’t need to do anything different with the  `install()`  command. devtools will use the path defined by the  `R_LIBS`  variable.
+
+# Installing Singularity Container for environment 
