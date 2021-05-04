@@ -1,0 +1,98 @@
+BootStrap: debootstrap
+OSVersion: focal
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+    PATH=/opt/miniconda/bin:$PATH
+    SINGULARITYENV_PS1='\n\[\033[01;33m\][`basename ${SINGULARITY_CONTAINER} .simg`]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \$ '
+
+%runscript
+
+ exec /bin/bash "$@"
+
+
+%post
+
+    # fix package sources
+    echo "deb http://us.archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse" > /etc/apt/sources.list
+    echo "deb http://us.archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse" >> /etc/apt/sources.list
+    echo "deb http://us.archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse" >> /etc/apt/sources.list
+    echo "deb http://us.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse" >> /etc/apt/sources.list
+
+    # upgrade packages in base image
+    DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y dist-upgrade
+    DEBIAN_FRONTEND=noninteractive apt-get -y install mc htop joe wget less locales 
+    DEBIAN_FRONTEND=noninteractive apt-get -y autoremove
+
+    # create a few ACI-specific directories within the container
+   # mkdir -p /storage/home
+   # mkdir -p /storage/work
+   # mkdir -p /gpfs/group
+   # mkdir -p /gpfs/scratch
+   # mkdir -p /var/spool/torque
+
+    # set the locale
+    locale-gen en_US.UTF-8
+    update-locale LANG=en_US.UTF-8
+
+    # install MiniConda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda
+    rm Miniconda3-latest-Linux-x86_64.sh
+    export PATH=/opt/miniconda/bin:$PATH
+    conda update --yes conda
+    conda config --add channels conda-forge
+    conda config --set channel_priority strict
+    conda update --yes --all
+    conda install --yes r-base r-ncdf4 r-rgdal r-scales r-ggplot2 r-rmpi r-doparallel r-foreach r-raster r-plyr r-vegan r-plotrix r-stringr r-dplyr  r-essentials r-devtools r-rnetcdf r-hdf5r 
+    
+    #libray needs to be installed for the R
+    #ncdf4, snow, Rmpi, doparallal, ggplot2, ROSE, DMwR2,lattice,gstat,RNetCDF, raster, #obsdbr, hdf5r, 
+    
+    
+    # R packages to install
+  R --slave -e 'install.packages("snow", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("ggplot2", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("ROSE", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("lattice", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("gstat", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("caret", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("DMwR2", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("mgcv", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("quantregForest", repos = "https://cran.rstudio.com/")'
+  R --slave -e 'install.packages("RJSONIO", repos = "https://cran.rstudio.com/")'
+
+  
+
+
+#installing rPython from the source (as for the R version>=4, rPython is not available in cran repository. To overcome this problem, we need to install it from the source)
+#apt-get update
+#apt-get upgrade
+#apt-get install -y python
+#apt-get install -y python-dev libxml2-dev libxslt-dev
+#wget https://cran.r-project.org/src/contrib/Archive/rPython/rPython_0.0-3.tar.gz
+#tar xvf rPython_0.0-3.tar.gz
+#export MAKEFLAGS='LDFLAGS=-L/foo/bar/Python-2.7.6/lib\ -Wl,-rpath\ /foo/bar/Python-2.7.6/lib'
+#R CMD build 
+#R CMD INSTALL rPython_0.0-6.tar.gz 
+wget -P /opt/miniconda/lib/R/library --no-check-certificate 'https://docs.google.com/uc?export=download&id=1NfOOAUaP-4Jv1ujyB6dnbXVWbLOhi9rQ' -O rPython.tar.xz
+tar xvf rPython.tar.xz
+
+
+
+
+#installing in-house packages (cwxr and obsdbr)
+#obsdbr
+
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1IrjnUHyi2OD2Qa6xYmeKCF0GXysnkjpg' -O obsdbr.zip
+unzip obsdbr.zip
+R CMD build obsdbr-master
+R CMD INSTALL obsdbr_0.0.0.9000.tar.gz 
+
+#cwxr
+
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1oBYYbcFARk50qjb1vhnm26BKkPOCr5Ik' -O cwxr.tar.xz
+tar xvf cwxr.tar.xz
+cd cwxr
+R CMD INSTALL -l /opt/miniconda/lib/R/library cwxr_0.0.0.9000.tar.gz
+
