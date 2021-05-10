@@ -140,4 +140,15 @@ where brocolors is the package name.
 If you install the package using  `devtools::install()`, you just need the  `~/.Renviron`  file; you don’t need to do anything different with the  `install()`  command. devtools will use the path defined by the  `R_LIBS`  variable.
 
 # Installing Singularity Container for environment 
-Work is in the progress...
+
+## To build the image from the container,please do the following steps:
+
+1.Install [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html)
+
+2.Download the cwxr.def file in your local machine and then  type the following command:
+
+```
+singularity build cwxr.simg cwxr.def 
+
+```
+where cwxr.simg is going to be the singularity image file.
