@@ -152,3 +152,48 @@ singularity build cwxr.simg cwxr.def
 
 ```
 where cwxr.simg is going to be the singularity image file.
+
+# Description of the ChesWx scripts
+ChesWx gridded weather model data consist of several scripts and methods. Details description of theses methods are given below for better understanding. 
+
+![image](https://user-images.githubusercontent.com/18476138/123168947-ac648480-d446-11eb-8bb0-4f85a0e08ff8.png)
+
+## 1. Analysis
+This folder contains several functions and scripts to calculate the bias, nearest neighbor error calculation,compare the observation etc. 
+
+![image](https://user-images.githubusercontent.com/18476138/123170006-00239d80-d448-11eb-8056-4990c80d999b.png)
+
+## 2. Data Setup
+This folder contains the script for setting up domain grid, calculating observation counts and merging gridded data into a single netcdf file. 
+
+![image](https://user-images.githubusercontent.com/18476138/123170248-4aa51a00-d448-11eb-9841-ef1ecbff60d7.png)
+
+
+## 3. Download
+
+This folder has all the scripts to download the observational precipitation data sets from various sources such as nldas2, ghcnd, cpc, ushsn etc. 
+
+![image](https://user-images.githubusercontent.com/18476138/123170305-5c86bd00-d448-11eb-8952-1bb3833ac481.png)
+
+## 4. Homog
+This folder contains scripts which will create the homogenize precipitation observations file adjusting time of observations, calculation observation counts and remove duplicate stations from same locations.
+
+![image](https://user-images.githubusercontent.com/18476138/123170383-77f1c800-d448-11eb-8f58-918413883cf0.png)
+
+
+## 5. Interpolation
+This is the main folder containing all the main files required to run the cheswx gridded weather data. It has several scripts incorporate different calibrations and optimization techniques.   
+
+![image](https://user-images.githubusercontent.com/18476138/123170502-95bf2d00-d448-11eb-857a-94763c034fc6.png)
+
+## 6. Plots
+This folder contains the scripts for plotting several maps and figures which can be used to validate the whole cheswx projects and calibrate the performance.
+
+![image](https://user-images.githubusercontent.com/18476138/123170679-cacb7f80-d448-11eb-9819-27bf61999587.png)
+
+
+## 7. QA
+QA folder contains scripts for station location quality assurance process. 
+
+![image](https://user-images.githubusercontent.com/18476138/123170806-f2bae300-d448-11eb-9de0-26daf16dbd85.png)
+
