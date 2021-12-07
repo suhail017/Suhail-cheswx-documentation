@@ -200,6 +200,11 @@ QA folder contains scripts for station location quality assurance process.
 
 # Flow Diagram for the ChesWx Run
 
+Following Steps are required to run the complete cheswx database.
+
+![image](https://user-images.githubusercontent.com/18476138/145078219-987b3442-b9f3-489b-9c5f-8277029d8743.png)
+
+
 This is a Initial diagram of how to run the ChesWx program to update the database. We will keep updating it based on the work progress. 
 
 ## Step 1: Initial File Processing
