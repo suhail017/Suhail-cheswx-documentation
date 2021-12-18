@@ -153,6 +153,16 @@ singularity build cwxr.simg cwxr.def
 ```
 where cwxr.simg is going to be the singularity image file.
 
+To run the script using the singularity file, following command can be used:
+
+```
+singularity exec <Container Name> <Compiler Name> <Script Name with location>
+
+```
+
+where Compiler Name = Python/Rscript
+
+
 # Description of the ChesWx scripts
 ChesWx gridded weather model data consist of several scripts and methods. Details description of theses methods are given below for better understanding. 
 
