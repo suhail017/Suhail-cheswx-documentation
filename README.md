@@ -124,7 +124,6 @@ If you wish to install your package somewhere other than the standard location (
 
 ```
 R_LIBS=/path/to/Rlibs
-
 ```
 
 replacing  `/path/to/Rlibs`  with the path that you want to use. For example, I use  `/home/suhail/Rlibs`.
@@ -133,7 +132,6 @@ replacing  `/path/to/Rlibs`  with the path that you want to use. For example, I 
 
 ```
 R CMD INSTALL --library=/path/to/Rlibs brocolors_0.1.tar.gz
-
 ```
 where brocolors is the package name.
 
@@ -149,7 +147,6 @@ If you install the package using  `devtools::install()`, you just need the  `~/.
 
 ```
 singularity build cwxr.simg cwxr.def 
-
 ```
 where cwxr.simg is going to be the singularity image file.
 
@@ -157,12 +154,11 @@ To run the script using the singularity file, following command can be used:
 
 ```
 singularity exec <Container Name> <Compiler Name> <Script Name with location>
-
 ```
 
 where Compiler Name = Python/Rscript
 
-
+A detail explaination and examples can be found [here](https://wiki.hpc.wvu.edu/hpc_wiki/index.php/Singularity).
 # Description of the ChesWx scripts
 ChesWx gridded weather model data consist of several scripts and methods. Details description of theses methods are given below for better understanding. 
 
