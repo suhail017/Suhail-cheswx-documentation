@@ -1,3 +1,4 @@
+library(sp)
 
 # Test case #1
 ll <- matrix(c(5, 12/0,6, 60), ncol=2)
