@@ -66,7 +66,7 @@ which indicates the download has been sucessfully completed.
 | [doparallel](https://cran.r-project.org/web/packages/doparallel/index.html)  | Yes      | Not required|R (≥ 2.14.0)|[foreach](https://cran.r-project.org/web/packages/foreach/index.html) (≥ 1.2.0), [iterators](https://cran.r-project.org/web/packages/iterators/index.html) (≥ 1.0.0), parallel, utils|
 | [foreach](https://cran.r-project.org/web/packages/foreach/index.html)  | Yes      | Not required|R (≥ 2.5.0)|
 |[sp](https://cran.r-project.org/web/packages/foreach/index.html)|Yes|Not required|R (≥ 2.5.0)
-| [cwxr](https://github.com/scrim-network/obsdbr)   | No      |  Required|R (≥ 3.5.0)
+| [cwxr](https://github.com/scrim-network/cheswx/tree/master/cwxr)   | No      |  Required|R (≥ 3.5.0)
 
 
 
