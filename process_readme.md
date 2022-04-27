@@ -2,8 +2,12 @@
 
 # Overview
 
-Initially, cheswx process requires 2 different steps to run; Preprocess and Main simulation. Before starting any of the process, we need to define some initail parameters at [cwx_config.ini](https://github.com/suhail017/cheswx-1/blob/master/cwx_config.ini) file.
+Initially, cheswx process requires two steps to run; Preprocess and Main simulation. Before starting any of the process, we need to define some initail parameters at [cwx_config.ini](https://github.com/suhail017/cheswx-1/blob/master/cwx_config.ini) file.
 Please change the line 8 and 9 for Interpolation start and end date according to your need. Change data_root location according to your local machine or HPC directory. Also change observavation start and end date (Line 6 & 7) if you plan to update the database.
+
+## Initialization
+
+Make sure you have downloaded and activated required conda environment for cheswx. You can find all the required conda environments in [here](https://github.com/suhail017/cheswx-1/tree/master/Conda_envs). For the most process, we are using the ``obsio_env.yml`` conda environment. 
 
 
 ## Running order of the ChesWx Preprocess
