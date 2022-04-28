@@ -75,7 +75,8 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 #export MAKEFLAGS='LDFLAGS=-L/foo/bar/Python-2.7.6/lib\ -Wl,-rpath\ /foo/bar/Python-2.7.6/lib'
 #R CMD build 
 #R CMD INSTALL rPython_0.0-6.tar.gz 
-wget -P /opt/miniconda/lib/R/library --no-check-certificate 'https://docs.google.com/uc?export=download&id=1NfOOAUaP-4Jv1ujyB6dnbXVWbLOhi9rQ' -O rPython.tar.xz
+#wget -P /opt/miniconda/lib/R/library --no-check-certificate 'https://docs.google.com/uc?export=download&id=1NfOOAUaP-4Jv1ujyB6dnbXVWbLOhi9rQ' -O rPython.tar.xz
+wget -P /opt/miniconda/lib/R/library --no-check-certificate https://cran.r-project.org/src/contrib/Archive/rPython/rPython_0.0-6.tar.gz
 tar xvf rPython.tar.xz
 
 
@@ -84,7 +85,9 @@ tar xvf rPython.tar.xz
 #installing in-house packages (cwxr and obsdbr)
 #obsdbr
 
-wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1IrjnUHyi2OD2Qa6xYmeKCF0GXysnkjpg' -O obsdbr.zip
+#wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1IrjnUHyi2OD2Qa6xYmeKCF0GXysnkjpg' -O obsdbr.zip
+wget --no-check-certificate https://github.com/scrim-network/obsdbr/archive/refs/heads/master.zip
+
 unzip obsdbr.zip
 R CMD build obsdbr-master
 R CMD INSTALL obsdbr_0.0.0.9000.tar.gz 
