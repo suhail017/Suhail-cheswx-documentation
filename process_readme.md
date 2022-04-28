@@ -79,7 +79,7 @@ output file: 'prcp_tobs_adj_’ymd’_’ymd’.nc<br />
 Pre required file: 2.1 and 2.3<br />
 Output file: prcp_homog_ref_’ymd’_’ymd’.nc<br />
 **Special Note**: We try to create the temporal range (starting year to end year) higher than 60 years, but unable to create it due to some error. So far, we are using starting year as 1951 and ending year to 2021.
-Please refer to additional document for in-details error description.
+Please refer to additional document for in-details [error](https://github.com/suhail017/cheswx/blob/main/error.md)  description.
 
 4.4. File Name: homog_prcp.R<br />
 Pre required file: 4.2 and 4.3<br />
