@@ -106,7 +106,7 @@ Output file: prcp_homog_’ymd’_’ymd’.nc<br />
 
 It requires 2 different files to run. [mpi_interp_updated.R]( https://github.com/suhail017/cheswx-1/blob/master/mpi_interp_updated.R) and [cheswx_function.R](https://github.com/suhail017/cheswx-1/blob/master/cheswx_functions_suhail.R)
 In addition, you require the prcp_homog_'ymd'_'ymd'.nc (Size is ~1.5 GB for 60 years of data) file that is generated from the cheswx preprocess part.  
-
+This process is completely based on R environment, and we created a [singular container](https://github.com/suhail017/cheswx/blob/main/cwxr.def) for this purpose.
 
 It is recommanded to run the cheswx simulation in a hpc cluster as it is very computationally expensive. However, if anyone wants to play with the code,
 they can run this ['interp_one_day_example.R'](https://github.com/suhail017/cheswx-1/blob/master/interp_one_day_example.Rhttps://github.com/suhail017/cheswx-1/blob/master/interp_one_day_example.R) for better understanding.
