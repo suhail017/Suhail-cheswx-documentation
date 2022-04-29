@@ -41,7 +41,7 @@ Output fie = obs_all_’ymd’_’ymd’.nc <br />
 
 
 **Special Note**:
-GHCND file is going take around 2 hours to download all the files to year 2020. make sure you have enough space (~120 GB) and stable internet connection. Make sure you have set the option download_updates=False for precprocessing. But if you want to update the observation data set, you can set it to true for download new files and update it. Make sure you have the stn_nums, tobs_prcp,tobs_tmax,tobs_tmin updated. I use the ftp file server to have it manually downloaded form the ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/ link. 
+GHCND file is going take around 2 hours to download all the files to year 2020. make sure you have enough space (~120 GB) and stable internet connection. Make sure you have set the option download_updates=False for precprocessing. But if you want to update the observation data set, you can set it to true for download new files and update it. Make sure you have the stn_nums, tobs_prcp,tobs_tmax,tobs_tmin updated. I use the ftp file server to have it manually downloaded form the (ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/) link. 
 
 
 2.5. File Name : download_nldas2.py  <br />
