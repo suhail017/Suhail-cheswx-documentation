@@ -10,7 +10,8 @@ Error in if (length(c(year, month, day, hour, min, sec)) == 6 && all(c(year,  :
   
 In addition: Warning messages:  
 1: In as_numeric(YYYY) : NAs introduced by coercion  
-2: In as_numeric(YYYY) : NAs introduced by coercion```
+2: In as_numeric(YYYY) : NAs introduced by coercion
+```
 
 ## Possible Solutions:
 We tried the following way to get rid of the error:
@@ -18,4 +19,5 @@ We tried the following way to get rid of the error:
 1. Delete the error Station: USH00413992:
 We tried to delete the station USH00413992, however this method doesn't work and the error persist.
 
-2. 
+2. Change the start and end date:
+We try to change the start and end date for the interpolation start and end date procedure, it didn't work out as well.
